@@ -1,2 +1,2 @@
 # memory-game
-Bootcamp online task
+Online Bootcamp task (https://www.udemy.com/course/the-complete-web-development-bootcamp/)

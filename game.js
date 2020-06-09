@@ -29,12 +29,15 @@ function checkAnswer(currentLevel) {
 }
 
 $(".btn").on("click", function() {
-  var userChosenColour = $(this).attr("id");
-  userClickedPattern.push(userChosenColour);
-  playSound(userChosenColour);
-  animatePress(userChosenColour);
-  var lastIndex = userClickedPattern.length - 1;
-  checkAnswer(lastIndex);
+  if (gameStarted) {
+    var userChosenColour = $(this).attr("id");
+    userClickedPattern.push(userChosenColour);
+    playSound(userChosenColour);
+    animatePress(userChosenColour);
+    var lastIndex = userClickedPattern.length - 1;
+    checkAnswer(lastIndex);
+  }
+
 });
 
 function nextSequence() {
@@ -53,7 +56,7 @@ function nextSequence() {
 function startOver() {
   level = 0;
   gamePattern = [];
-  var gameStarted = false;
+  gameStarted = false;
 };
 
 function playSound(name) {
